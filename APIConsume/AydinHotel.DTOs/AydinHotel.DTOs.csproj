@@ -17,4 +17,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\AydinHotel.Entity\AydinHotel.Entity.csproj" />
+  </ItemGroup>
+
 </Project>
