@@ -8,18 +8,21 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Frontend", "Frontend", "{742C2BD8-A483-4A02-BF03-6193212668DA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ToDoList", "ToDoList", "{F7121EB2-D557-44B2-860C-31912C289EB0}"
+	ProjectSection(SolutionItems) = preProject
+		Steps.txt = Steps.txt
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AydinHotel.WebAPI", "APIConsume\AydinHotel.WebAPI\AydinHotel.WebAPI.csproj", "{64AAF3E9-D975-46E1-A6F7-E74B069E9B07}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AydinHotel.WebAPI", "APIConsume\AydinHotel.WebAPI\AydinHotel.WebAPI.csproj", "{64AAF3E9-D975-46E1-A6F7-E74B069E9B07}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AydinHotel.Entity", "APIConsume\AydinHotel.Entity\AydinHotel.Entity.csproj", "{A70F23AF-A09A-4A54-B247-ECEB18E32590}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AydinHotel.Entity", "APIConsume\AydinHotel.Entity\AydinHotel.Entity.csproj", "{A70F23AF-A09A-4A54-B247-ECEB18E32590}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AydinHotel.DataAccess", "APIConsume\AydinHotel.DataAccess\AydinHotel.DataAccess.csproj", "{4E970BE1-FFA2-470A-9B8D-215B6C9445A1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AydinHotel.DataAccess", "APIConsume\AydinHotel.DataAccess\AydinHotel.DataAccess.csproj", "{4E970BE1-FFA2-470A-9B8D-215B6C9445A1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AydinHotel.Business", "APIConsume\AydinHotel.Business\AydinHotel.Business.csproj", "{9EAD8E23-177B-46D9-A5C1-F19B7FAE53C4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AydinHotel.Business", "APIConsume\AydinHotel.Business\AydinHotel.Business.csproj", "{9EAD8E23-177B-46D9-A5C1-F19B7FAE53C4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AydinHotel.DTOs", "APIConsume\AydinHotel.DTOs\AydinHotel.DTOs.csproj", "{1076CB92-563E-49BD-9631-7CF1FE90A222}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AydinHotel.DTOs", "APIConsume\AydinHotel.DTOs\AydinHotel.DTOs.csproj", "{1076CB92-563E-49BD-9631-7CF1FE90A222}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AydinHotel.WebUI", "Frontend\AydinHotel.WebUI\AydinHotel.WebUI.csproj", "{84AE4D6C-8327-4A3D-A651-529A21934AC3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AydinHotel.WebUI", "Frontend\AydinHotel.WebUI\AydinHotel.WebUI.csproj", "{84AE4D6C-8327-4A3D-A651-529A21934AC3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
