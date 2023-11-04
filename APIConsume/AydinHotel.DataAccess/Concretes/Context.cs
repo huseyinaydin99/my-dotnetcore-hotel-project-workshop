@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using AydinHotel.Entity.Concrete;
+using AydinHotel.Entity.Concretes;
+using AydinHotel.Entity.Concretes;
 using Microsoft.EntityFrameworkCore;
 
 namespace AydinHotel.DataAccess.Concrete

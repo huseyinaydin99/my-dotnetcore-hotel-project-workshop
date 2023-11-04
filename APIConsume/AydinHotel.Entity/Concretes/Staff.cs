@@ -1,12 +1,13 @@
-﻿using System;
+﻿using AydinHotel.Entity.Abstracts;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AydinHotel.Entity.Concrete
+namespace AydinHotel.Entity.Concretes
 {
-    public class Staff
+    public class Staff : IEntity
     {
         public int StaffId { get; set; }
         public string Name { get; set; }

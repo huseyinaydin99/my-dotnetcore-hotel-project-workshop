@@ -21,8 +21,4 @@
     <ProjectReference Include="..\AydinHotel.Entity\AydinHotel.Entity.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Abstracts\" />
-  </ItemGroup>
-
 </Project>

@@ -1,12 +1,13 @@
-﻿using System;
+﻿using AydinHotel.Entity.Abstracts;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AydinHotel.Entity.Concrete
+namespace AydinHotel.Entity.Concretes
 {
-    public class Testimonial
+    public class Testimonial : IEntity
     {
         public int TestimonialId { get; set; }
         public string Name { get; set; }
