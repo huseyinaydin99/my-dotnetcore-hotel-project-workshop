@@ -46,6 +46,14 @@ namespace AydinHotel.WebAPI
             services.AddScoped<ITestimonialDal, EfTestimonialDal>();
             services.AddScoped<ITestimonialService, TestimonialManager>();
 
+            services.AddCors(opt =>
+            {
+                opt.AddPolicy("AydinHotelCors", opts =>
+                {
+                    opts.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
+                });
+            });
+
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
@@ -64,7 +72,7 @@ namespace AydinHotel.WebAPI
             }
 
             app.UseRouting();
-
+            app.UseCors("AydinHotelCors");
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
