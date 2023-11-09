@@ -1,0 +1,58 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<!DOCTYPE html>
+<html lang="en">
+@await Html.PartialAsync("~/Pages/AdminLayout/HeadPartial.cshtml")
+<body>
+
+    @await Html.PartialAsync("~/Pages/AdminLayout/PreloaderPartial.cshtml")
+    <!--**********************************
+    Main wrapper start
+    ***********************************-->
+    <div id="main-wrapper">
+
+        @await Html.PartialAsync("~/Pages/AdminLayout/NavheaderPartial.cshtml")
+        @await Html.PartialAsync("~/Pages/AdminLayout/HeaderPartial.cshtml")
+        @await Html.PartialAsync("~/Pages/AdminLayout/SidebarPartial.cshtml")
+        <!--**********************************
+        Content body start
+        ***********************************-->
+        <div class="content-body">
+
+            <!--
+            <div class="row page-titles mx-0">
+                <div class="col p-md-0">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="javascript:void(0)">Dashboard</a></li>
+                        <li class="breadcrumb-item active"><a href="javascript:void(0)">Home</a></li>
+                    </ol>
+                </div>
+            </div>
+            -->
+            <!-- row -->
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                @RenderBody()
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- #/ container -->
+        </div>
+        <!--**********************************
+        Content body end
+        ***********************************-->
+        @await Html.PartialAsync("~/Pages/AdminLayout/FooterPartial.cshtml")
+    </div>
+    @await Html.PartialAsync("~/Pages/AdminLayout/ScriptPartial.cshtml")
+</body>
+</html>
