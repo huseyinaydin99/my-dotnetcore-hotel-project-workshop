@@ -43,11 +43,12 @@ namespace AydinHotel.WebUI
             
             app.UseAuthorization();
 
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Staff}/{action=Index}/{id?}");
             });
         }
     }
