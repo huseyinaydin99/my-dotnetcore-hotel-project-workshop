@@ -1,0 +1,33 @@
+﻿@model List<TestimonialViewModel>
+
+@{
+    ViewBag.Title = "title";
+    Layout = "~/Views/AdminLayout/_AdminLayout.cshtml";
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Referans Görsel</th>
+        <th>Referans Adı</th>
+        <th>Referans Ünvan</th>
+        <th>Açıklama</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+        <th>Detaylar</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.TestimonialId</td>
+            <td>@item.Image</td>
+            <td>@item.Name</td>
+            <td>@item.Title</td>
+            <td>@item.Description</td>
+            <td><a href="/Testimonial/DeleteTestimonial/@item.TestimonialId" class="btn mb-1 btn-rounded btn-outline-danger">Sil</a></td>
+            <td><a href="/Testimonial/UpdateTestimonial/@item.TestimonialId" class="btn mb-1 btn-rounded btn-outline-success">Güncelle</a></td>
+            <td><a href="#" class="btn mb-1 btn-rounded btn-outline-info">Detaylar</a></td>
+        </tr>
+    }
+</table>
+<a href="/Testimonial/AddTestimonial/" class="btn mb-1 btn-rounded btn-outline-dark">Yeni Personel Girişi</a>
