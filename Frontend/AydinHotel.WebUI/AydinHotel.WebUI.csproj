@@ -41,6 +41,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\APIConsume\AydinHotel.DataAccess\AydinHotel.DataAccess.csproj" />
     <ProjectReference Include="..\..\APIConsume\AydinHotel.Entity\AydinHotel.Entity.csproj" />
   </ItemGroup>
 

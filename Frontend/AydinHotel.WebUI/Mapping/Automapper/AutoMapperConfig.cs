@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using AydinHotel.Entity.Concretes;
+using AydinHotel.WebUI.DTOs.RegisterDTOs;
 using AydinHotel.WebUI.DTOs.ServiceDTO;
 
 namespace AydinHotel.WebUI.Mapping.Automapper
@@ -11,6 +12,8 @@ namespace AydinHotel.WebUI.Mapping.Automapper
             CreateMap<CreateServiceDTO, Service>().ReverseMap();
             CreateMap<ResultServiceDTO, Service>().ReverseMap();
             CreateMap<UpdateServiceDTO, Service>().ReverseMap();
+
+            CreateMap<AppUser, CreateNewUserDTO>().ReverseMap();
         }
     }
 }
