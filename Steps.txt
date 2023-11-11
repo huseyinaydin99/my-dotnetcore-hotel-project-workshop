@@ -1,1 +1,3 @@
 WebAPI test and Swagger Configuration (-:
+Temayý ekleyelim.
+Register ve Login iþlemlerini yapalým.

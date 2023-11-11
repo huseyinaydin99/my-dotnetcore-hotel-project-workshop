@@ -5,11 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 using AydinHotel.Entity.Concretes;
 using AydinHotel.Entity.Concretes;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace AydinHotel.DataAccess.Concrete
 {
-    public class Context : DbContext
+    public class Context : IdentityDbContext<AppUser, AppRole, int>
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
