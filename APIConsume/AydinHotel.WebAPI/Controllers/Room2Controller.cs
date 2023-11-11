@@ -3,7 +3,6 @@ using AydinHotel.Business.Abstracts;
 using AydinHotel.DTOs.DTOs.RoomDTOs;
 using AydinHotel.Entity.Concretes;
 using Microsoft.AspNetCore.Mvc;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace AydinHotel.WebAPI.Controllers
 {
@@ -38,7 +37,7 @@ namespace AydinHotel.WebAPI.Controllers
             return Ok("Oda kaydı yapıldı.");
         }
 
-        [HttpPost]
+        [HttpPut]
         public IActionResult UpdateRoom(RoomUpdateDTO roomUpdateDto)
         {
             if (!ModelState.IsValid)
