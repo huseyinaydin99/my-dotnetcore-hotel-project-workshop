@@ -20,12 +20,12 @@ namespace AydinHotel.WebUI.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            return RedirectToAction("Index","Register");
         }
 
         public IActionResult Privacy()
         {
-            return View();
+            return RedirectToAction("Index", "Register");
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

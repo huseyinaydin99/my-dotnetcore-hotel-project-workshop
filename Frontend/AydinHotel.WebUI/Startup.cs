@@ -26,6 +26,7 @@ namespace AydinHotel.WebUI
         {
             services.AddDbContext<Context>();
             services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<Context>();
+            services.AddAutoMapper(typeof(Startup));
 
             services.AddHttpClient();
             services.AddControllersWithViews();
@@ -53,7 +54,7 @@ namespace AydinHotel.WebUI
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Staff}/{action=Index}/{id?}");
+                    pattern: "{controller=Login}/{action=Index}/{id?}");
             });
         }
     }
