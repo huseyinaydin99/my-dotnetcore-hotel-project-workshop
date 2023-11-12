@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AydinHotel.DataAccess.Abstracts;
-using AydinHotel.DataAccess.Concrete;
+using AydinHotel.DataAccess.Concretes;
 using AydinHotel.DataAccess.Repositories;
 using AydinHotel.Entity.Concretes;
 

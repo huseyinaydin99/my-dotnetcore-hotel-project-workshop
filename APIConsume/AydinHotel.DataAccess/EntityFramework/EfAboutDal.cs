@@ -10,9 +10,9 @@ using AydinHotel.Entity.Concretes;
 
 namespace AydinHotel.DataAccess.EntityFramework
 {
-    public class EfServiceDal : GenericRepository<Service>, IServiceDal
+    public class EfAboutDal : GenericRepository<About>, IAboutDal
     {
-        public EfServiceDal(Context context) : base(context)
+        public EfAboutDal(Context context) : base(context)
         {
 
         }

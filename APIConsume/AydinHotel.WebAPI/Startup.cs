@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 using AydinHotel.Business.Abstracts;
 using AydinHotel.Business.Concretes;
 using AydinHotel.DataAccess.Abstracts;
-using AydinHotel.DataAccess.Concrete;
+using AydinHotel.DataAccess.Concretes;
 using AydinHotel.DataAccess.EntityFramework;
 
 namespace AydinHotel.WebAPI
@@ -45,6 +45,9 @@ namespace AydinHotel.WebAPI
 
             services.AddScoped<ITestimonialDal, EfTestimonialDal>();
             services.AddScoped<ITestimonialService, TestimonialManager>();
+
+            services.AddScoped<IAboutDal, EfAboutDal>();
+            services.AddScoped<IAboutService, AboutManager>();
 
             services.AddAutoMapper(typeof(Startup));
 
