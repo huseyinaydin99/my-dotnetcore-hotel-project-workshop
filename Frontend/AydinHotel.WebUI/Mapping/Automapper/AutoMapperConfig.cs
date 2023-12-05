@@ -4,6 +4,7 @@ using AydinHotel.WebUI.DTOs.AboutDTOs;
 using AydinHotel.WebUI.DTOs.LoginDTOs;
 using AydinHotel.WebUI.DTOs.RegisterDTOs;
 using AydinHotel.WebUI.DTOs.ServiceDTO;
+using AydinHotel.WebUI.DTOs.StaffDTOs;
 
 namespace AydinHotel.WebUI.Mapping.Automapper
 {
@@ -20,6 +21,8 @@ namespace AydinHotel.WebUI.Mapping.Automapper
 
             CreateMap<UpdateAboutDTO, About>().ReverseMap();
             CreateMap<ResultAboutDTO, About>().ReverseMap();
+
+            CreateMap<ResultStaffDTO, Staff>().ReverseMap();
         }
     }
 }
