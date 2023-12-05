@@ -5,6 +5,7 @@ using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
+using AydinHotel.WebUI.DTOs.ServiceDTO;
 
 namespace AydinHotel.WebUI.ViewComponent.Default
 {
@@ -24,7 +25,7 @@ namespace AydinHotel.WebUI.ViewComponent.Default
             if (responseMessage.IsSuccessStatusCode)
             {
                 var jsonData = await responseMessage.Content.ReadAsStringAsync();
-                var values = JsonConvert.DeserializeObject<List<ResultRoomDTO>>(jsonData);
+                var values = JsonConvert.DeserializeObject<List<ResultServiceDTO>>(jsonData);
                 return View(values);
             }
 
