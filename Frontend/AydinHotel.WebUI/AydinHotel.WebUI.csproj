@@ -27,13 +27,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <_ContentIncludedByDefault Remove="Pages\AdminLayout\FooterPartial.cshtml" />
-    <_ContentIncludedByDefault Remove="Pages\AdminLayout\HeadPartial.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\AdminLayout\FooterPartial.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\AdminLayout\HeadPartial.cshtml" />
     <_ContentIncludedByDefault Remove="Views\Staff\Index.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
-    <UpToDateCheckInput Remove="Pages\AdminLayout\HeadPartial.cshtml" />
+    <UpToDateCheckInput Remove="Views\AdminLayout\HeadPartial.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -143,6 +143,17 @@
   <ItemGroup>
     <ProjectReference Include="..\..\APIConsume\AydinHotel.DataAccess\AydinHotel.DataAccess.csproj" />
     <ProjectReference Include="..\..\APIConsume\AydinHotel.Entity\AydinHotel.Entity.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="Views\AdminLayout\HeadPartial.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Views\AdminLayout\" />
   </ItemGroup>
 
 </Project>

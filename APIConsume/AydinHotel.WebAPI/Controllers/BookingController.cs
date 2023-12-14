@@ -9,47 +9,61 @@ namespace AydinHotel.WebAPI.Controllers
     [ApiController]
     public class BookingController : ControllerBase
     {
-        private IBookingService _bookingBooking;
+        private IBookingService _bookingService;
 
         public BookingController(IBookingService bookingService)
         {
-            _bookingBooking = bookingService;
+            _bookingService = bookingService;
         }
 
         [HttpGet]
         public IActionResult BookingList()
         {
-            var values = _bookingBooking.TGetList();
+            var values = _bookingService.TGetList();
             return Ok(values);
         }
 
         [HttpPost]
         public IActionResult AddBooking(Booking booking)
         {
-            _bookingBooking.TInsert(booking);
+            _bookingService.TInsert(booking);
             return Ok();
         }
 
         [HttpDelete("{id}")]
         public IActionResult DeleteBooking(int id)
         {
-            var values = _bookingBooking.TGetById(id);
-            _bookingBooking.TDelete(values);
+            var values = _bookingService.TGetById(id);
+            _bookingService.TDelete(values);
             return Ok();
         }
 
-        [HttpPut]
+        [HttpPut("UpdateBooking")]
         public IActionResult UpdateBooking(Booking booking)
         {
-            _bookingBooking.TUpdate(booking);
+            _bookingService.TUpdate(booking);
             return Ok();
         }
 
         [HttpGet("{id}")]
         public IActionResult GetBooking(int id)
         {
-            var values = _bookingBooking.TGetById(id);
+            var values = _bookingService.TGetById(id);
             return Ok(values);
+        }
+
+        [HttpPut("aaaaa")]
+        public IActionResult aaaaa(Booking booking)
+        {
+            _bookingService.BookingStatusChangeApproved(booking);
+            return Ok();
+        }
+
+        [HttpPut("bbbbb")]
+        public IActionResult bbbbb(int id)
+        {
+            _bookingService.BookingStatusChangeApproved2(id);
+            return Ok();
         }
     }
 }

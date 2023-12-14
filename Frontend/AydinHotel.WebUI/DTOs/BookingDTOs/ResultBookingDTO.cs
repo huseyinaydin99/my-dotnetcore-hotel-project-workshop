@@ -1,13 +1,8 @@
-﻿using AydinHotel.Entity.Abstracts;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 
-namespace AydinHotel.Entity.Concretes
+namespace AydinHotel.WebUI.DTOs.BookingDTOs
 {
-    public class Booking : IEntity
+    public class ResultBookingDTO
     {
         public int BookingId { get; set; }
         public string Name { get; set; }

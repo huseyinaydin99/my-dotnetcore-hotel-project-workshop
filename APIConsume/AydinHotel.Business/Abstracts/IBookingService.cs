@@ -9,6 +9,7 @@ namespace AydinHotel.Business.Abstracts
 {
     public interface IBookingService : IGenericService<Booking>
     {
-
+        void BookingStatusChangeApproved(Booking booking);
+        void BookingStatusChangeApproved2(int id);
     }
 }

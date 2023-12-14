@@ -16,5 +16,21 @@ namespace AydinHotel.DataAccess.EntityFramework
         {
 
         }
+
+        public void BookingStatusChangeApproved(Booking booking)
+        {
+            var context = new Context();
+            var value = context.Bookings.Where(x => x.BookingId == booking.BookingId).FirstOrDefault();
+            value.Status = "Onaylandı";
+            context.SaveChanges();
+        }
+
+        public void BookingStatusChangeApproved2(int id)
+        {
+            var context = new Context();
+            var value = context.Bookings.Find(id);
+            value.Status = "Onaylandı";
+            context.SaveChanges();
+        }
     }
 }

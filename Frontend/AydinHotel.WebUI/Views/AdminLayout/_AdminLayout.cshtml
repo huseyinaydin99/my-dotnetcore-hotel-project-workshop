@@ -6,18 +6,18 @@
 
 <!DOCTYPE html>
 <html lang="en">
-@await Html.PartialAsync("~/Pages/AdminLayout/HeadPartial.cshtml")
+@await Html.PartialAsync("~/Views/AdminLayout/HeadPartial.cshtml")
 <body>
 
-    @await Html.PartialAsync("~/Pages/AdminLayout/PreloaderPartial.cshtml")
+    @await Html.PartialAsync("~/Views/AdminLayout/PreloaderPartial.cshtml")
     <!--**********************************
     Main wrapper start
     ***********************************-->
     <div id="main-wrapper">
 
-        @await Html.PartialAsync("~/Pages/AdminLayout/NavheaderPartial.cshtml")
-        @await Html.PartialAsync("~/Pages/AdminLayout/HeaderPartial.cshtml")
-        @await Html.PartialAsync("~/Pages/AdminLayout/SidebarPartial.cshtml")
+        @await Html.PartialAsync("~/Views/AdminLayout/NavheaderPartial.cshtml")
+        @await Html.PartialAsync("~/Views/AdminLayout/HeaderPartial.cshtml")
+        @await Html.PartialAsync("~/Views/AdminLayout/SidebarPartial.cshtml")
         <!--**********************************
         Content body start
         ***********************************-->
@@ -51,8 +51,8 @@
         <!--**********************************
         Content body end
         ***********************************-->
-        @await Html.PartialAsync("~/Pages/AdminLayout/FooterPartial.cshtml")
+        @await Html.PartialAsync("~/Views/AdminLayout/FooterPartial.cshtml")
     </div>
-    @await Html.PartialAsync("~/Pages/AdminLayout/ScriptPartial.cshtml")
+    @await Html.PartialAsync("~/Views/AdminLayout/ScriptPartial.cshtml")
 </body>
 </html>

@@ -42,5 +42,15 @@ namespace AydinHotel.Business.Concretes
         {
             return _bookingDal.GetById(id);
         }
+
+        public void BookingStatusChangeApproved(Booking booking)
+        {
+            _bookingDal.BookingStatusChangeApproved(booking);
+        }
+
+        public void BookingStatusChangeApproved2(int id)
+        {
+            _bookingDal.BookingStatusChangeApproved2(id);
+        }
     }
 }
