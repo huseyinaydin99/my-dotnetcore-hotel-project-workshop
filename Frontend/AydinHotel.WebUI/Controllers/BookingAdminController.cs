@@ -36,14 +36,14 @@ namespace AydinHotel.WebUI.Controllers
         [HttpGet]
         public async Task<IActionResult> ApprovedReservation(int id)
         {
-            var client = _httpClientFactory.CreateClient();
+            /*var client = _httpClientFactory.CreateClient();
             var jsonData = JsonConvert.SerializeObject(approvedReservationDTO);
             StringContent content = new StringContent(jsonData, Encoding.UTF8, "application/json");
             var responseMessage = await client.PutAsync("http://localhost:21023/api/Booking", content);
             if (responseMessage.IsSuccessStatusCode)
             {
                 return RedirectToAction("Index");
-            }
+            }*/
             return View();
         }
     }
