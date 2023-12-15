@@ -35,11 +35,13 @@ namespace JSONWebToken.WebAPI
                 {
                     ValidIssuer = "http://localhost",
                     ValidAudience = "http://localhost",
-                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("huso_baba_jwt_key_reis")),
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("huseyinaspnetcalis")),
                     ValidateIssuerSigningKey = true,
-                    ValidateLifetime = true
+                    ValidateLifetime = true,
+                    ClockSkew = TimeSpan.Zero
                 };
             });
+            
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
@@ -59,6 +61,7 @@ namespace JSONWebToken.WebAPI
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
