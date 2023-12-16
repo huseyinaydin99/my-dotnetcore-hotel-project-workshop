@@ -4,14 +4,16 @@ using AydinHotel.DataAccess.Concretes;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace AydinHotel.DataAccess.Migrations
 {
     [DbContext(typeof(Context))]
-    partial class ContextModelSnapshot : ModelSnapshot
+    [Migration("20231216071323_mig_add_contact")]
+    partial class mig_add_contact
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -212,9 +214,6 @@ namespace AydinHotel.DataAccess.Migrations
                     b.Property<string>("Message")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("MessageCategoryId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
@@ -222,8 +221,6 @@ namespace AydinHotel.DataAccess.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ContactId");
-
-                    b.HasIndex("MessageCategoryId");
 
                     b.ToTable("Contacts");
                 });
@@ -247,21 +244,6 @@ namespace AydinHotel.DataAccess.Migrations
                     b.HasKey("GuestId");
 
                     b.ToTable("Guests");
-                });
-
-            modelBuilder.Entity("AydinHotel.Entity.Concretes.MessageCategory", b =>
-                {
-                    b.Property<int>("MessageCategoryId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("MessageCategoryName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("MessageCategoryId");
-
-                    b.ToTable("MessageCategories");
                 });
 
             modelBuilder.Entity("AydinHotel.Entity.Concretes.Room", b =>
@@ -488,13 +470,6 @@ namespace AydinHotel.DataAccess.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
-            modelBuilder.Entity("AydinHotel.Entity.Concretes.Contact", b =>
-                {
-                    b.HasOne("AydinHotel.Entity.Concretes.MessageCategory", null)
-                        .WithMany("Contacts")
-                        .HasForeignKey("MessageCategoryId");
-                });
-
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<int>", b =>
                 {
                     b.HasOne("AydinHotel.Entity.Concretes.AppRole", null)
@@ -544,11 +519,6 @@ namespace AydinHotel.DataAccess.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-                });
-
-            modelBuilder.Entity("AydinHotel.Entity.Concretes.MessageCategory", b =>
-                {
-                    b.Navigation("Contacts");
                 });
 #pragma warning restore 612, 618
         }
