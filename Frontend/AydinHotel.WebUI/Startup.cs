@@ -34,7 +34,7 @@ namespace AydinHotel.WebUI
             services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<Context>();
             services.AddHttpClient();
             services.AddTransient<IValidator<CreateGuestDTO>, CreateGuestValidator>();
-            //services.AddTransient<IValidator<UpdateGuestDTO>, UpdateGuestValidator>();
+            services.AddTransient<IValidator<UpdateGuestDTO>, UpdateGuestValidator>();
             services.AddControllersWithViews().AddFluentValidation();
             services.AddAutoMapper(typeof(Startup));
 

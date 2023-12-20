@@ -31,6 +31,7 @@ namespace AydinHotel.WebUI.Mapping.Automapper
             CreateMap<ApprovedReservationDTO, Booking>().ReverseMap();
 
             CreateMap<CreateGuestDTO, Guest>().ReverseMap();
+            CreateMap<UpdateGuestDTO, Guest>().ReverseMap();
         }
     }
 }
