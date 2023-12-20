@@ -30,7 +30,7 @@ namespace AydinHotel.WebAPI.Controllers
             return Ok();
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public IActionResult DeleteRoom(int id)
         {
             var values = _roomService.TGetById(id);
@@ -52,25 +52,4 @@ namespace AydinHotel.WebAPI.Controllers
             return Ok(values);
         }
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
