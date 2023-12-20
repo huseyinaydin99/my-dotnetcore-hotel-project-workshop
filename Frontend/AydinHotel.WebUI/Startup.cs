@@ -9,6 +9,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using AydinHotel.DataAccess.Concretes;
 using AydinHotel.Entity.Concretes;
+using FluentValidation;
+using Microsoft.Extensions.DependencyInjection;
+
+using AydinHotel.WebUI.DTOs.GuestDTOs;
+using AydinHotel.WebUI.ValidationRules.GuestValidationRules;
+using FluentValidation.AspNetCore;
 
 namespace AydinHotel.WebUI
 {
@@ -26,9 +32,14 @@ namespace AydinHotel.WebUI
         {
             services.AddDbContext<Context>();
             services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<Context>();
+            services.AddHttpClient();
+            services.AddTransient<IValidator<CreateGuestDTO>, CreateGuestValidator>();
+            //services.AddTransient<IValidator<UpdateGuestDTO>, UpdateGuestValidator>();
+            services.AddControllersWithViews().AddFluentValidation();
             services.AddAutoMapper(typeof(Startup));
 
-            services.AddHttpClient();
+
+
             services.AddControllersWithViews();
         }
 

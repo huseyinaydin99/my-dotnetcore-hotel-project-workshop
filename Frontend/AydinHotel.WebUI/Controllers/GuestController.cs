@@ -41,15 +41,15 @@ namespace AydinHotel.WebUI.Controllers
         [HttpPost]
         public async Task<IActionResult> AddGuest(CreateGuestDTO createGuestDTO)
         {
-            var client = _httpClientFactory.CreateClient();
-            var jsonData = JsonConvert.SerializeObject(createGuestDTO);
-            StringContent content = new StringContent(jsonData, Encoding.UTF8, "application/json");
-            var responseMessage = await client.PostAsync("http://localhost:21023/api/Guest", content);
-            if (responseMessage.IsSuccessStatusCode)
+            if (ModelState.IsValid)
             {
-                return RedirectToAction("Index");
-            }
+                var client = _httpClientFactory.CreateClient();
+                var jsonData = JsonConvert.SerializeObject(createGuestDTO);
+                StringContent content = new StringContent(jsonData, Encoding.UTF8, "application/json");
+                var responseMessage = await client.PostAsync("http://localhost:21023/api/Guest", content);
 
+                return responseMessage.IsSuccessStatusCode ? RedirectToAction("Index") : View();
+            }
             return View();
         }
 
