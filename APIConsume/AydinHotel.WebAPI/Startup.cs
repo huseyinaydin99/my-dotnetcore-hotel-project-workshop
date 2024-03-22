@@ -52,6 +52,9 @@ namespace AydinHotel.WebAPI
             services.AddScoped<IBookingDal, EfBookingDal>();
             services.AddScoped<IBookingService, BookingManager>();
 
+            services.AddScoped<ISendMessageDal, EfSendMessageDal>();
+            services.AddScoped<ISendMessageService, SendMessageManager>();
+
             services.AddScoped<IMessageCategoryDal, EfMessageCategoryDal>();
             services.AddScoped<IMessageCategoryService, MessageCategoryManager>();
 
