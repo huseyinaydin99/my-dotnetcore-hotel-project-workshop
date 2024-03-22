@@ -1,6 +1,6 @@
 ﻿using AydinHotel.WebUI.DTOs.BookingDTOs;
-using AydinHotel.WebUI.DTOs.ContactDTO;
-using AydinHotel.WebUI.DTOs.MessageCategoryDTO;
+using AydinHotel.WebUI.DTOs.ContactDTOs;
+using AydinHotel.WebUI.DTOs.MessageCategoryDTOs;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;

@@ -5,7 +5,7 @@ using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
-using AydinHotel.WebUI.DTOs.ServiceDTO;
+using AydinHotel.WebUI.DTOs.ServiceDTOs;
 
 namespace AydinHotel.WebUI.ViewComponent.Default
 {

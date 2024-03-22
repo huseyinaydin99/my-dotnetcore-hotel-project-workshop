@@ -1,4 +1,4 @@
-﻿namespace AydinHotel.WebUI.DTOs.MessageCategoryDTO
+﻿namespace AydinHotel.WebUI.DTOs.MessageCategoryDTOs
 {
     public class ResultMessageCategoryDTO
     {

@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace AydinHotel.WebUI.DTOs.ServiceDTO
+namespace AydinHotel.WebUI.DTOs.ServiceDTOs
 {
     public class ResultServiceDTO
     {

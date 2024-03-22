@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace AydinHotel.WebUI.DTOs.ContactDTO
+namespace AydinHotel.WebUI.DTOs.ContactDTOs
 {
     public class CreateContactDTO
     {

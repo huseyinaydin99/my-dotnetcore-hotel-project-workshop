@@ -1,4 +1,5 @@
-﻿using AydinHotel.WebUI.DTOs.ContactDTO;
+﻿using AydinHotel.WebUI.DTOs.ContactDTOs;
+using AydinHotel.WebUI.DTOs.ContactDTOs;
 using AydinHotel.WebUI.DTOs.SendMessageDTOs;
 using AydinHotel.WebUI.Models.Staff;
 using Microsoft.AspNetCore.Mvc;
@@ -30,6 +31,20 @@ namespace AydinHotel.WebUI.Controllers
             {
                 var jsonData = await responseMessage.Content.ReadAsStringAsync();
                 var values = JsonConvert.DeserializeObject<List<InboxContactDTO>>(jsonData);
+                return View(values);
+            }
+
+            return View();
+        }
+
+        public async Task<IActionResult> Sendbox()
+        {
+            var client = _httpClientFactory.CreateClient();
+            var responseMessage = await client.GetAsync("http://localhost:21023/api/SendMessage");
+            if (responseMessage.IsSuccessStatusCode)
+            {
+                var jsonData = await responseMessage.Content.ReadAsStringAsync();
+                var values = JsonConvert.DeserializeObject<List<ResultSendboxDTO>>(jsonData);
                 return View(values);
             }
 

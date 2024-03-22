@@ -5,7 +5,7 @@ using AydinHotel.WebUI.DTOs.BookingDTOs;
 using AydinHotel.WebUI.DTOs.GuestDTOs;
 using AydinHotel.WebUI.DTOs.LoginDTOs;
 using AydinHotel.WebUI.DTOs.RegisterDTOs;
-using AydinHotel.WebUI.DTOs.ServiceDTO;
+using AydinHotel.WebUI.DTOs.ServiceDTOs;
 using AydinHotel.WebUI.DTOs.StaffDTOs;
 using AydinHotel.WebUI.DTOs.SubscribeDTOs;
 

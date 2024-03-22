@@ -1,5 +1,5 @@
 ﻿using AydinHotel.WebUI.DTOs.BookingDTOs;
-using AydinHotel.WebUI.DTOs.ServiceDTO;
+using AydinHotel.WebUI.DTOs.ServiceDTOs;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Collections.Generic;
