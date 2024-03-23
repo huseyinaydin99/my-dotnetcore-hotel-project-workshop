@@ -66,7 +66,7 @@ namespace AydinHotel.WebUI.Controllers
             var client = _httpClientFactory.CreateClient();
             var jsonData = JsonConvert.SerializeObject(createSendMessage);
             StringContent stringContent = new StringContent(jsonData, Encoding.UTF8, "application/json");
-            var responseMessage = await client.PostAsync("http://localhost:3523/api/SendMessage", stringContent);
+            var responseMessage = await client.PostAsync("http://localhost:21023/api/SendMessage", stringContent);
             if (responseMessage.IsSuccessStatusCode)
             {
                 return RedirectToAction("SendBox");
@@ -87,7 +87,7 @@ namespace AydinHotel.WebUI.Controllers
         public async Task<IActionResult> MessageDetailsBySendbox(int id)
         {
             var client = _httpClientFactory.CreateClient();
-            var responseMessage = await client.GetAsync($"http://localhost:3523/api/SendMessage/{id}");
+            var responseMessage = await client.GetAsync($"http://localhost:21023/api/SendMessage/{id}");
             if (responseMessage.IsSuccessStatusCode)
             {
                 var jsonData = await responseMessage.Content.ReadAsStringAsync();
@@ -100,7 +100,7 @@ namespace AydinHotel.WebUI.Controllers
         public async Task<IActionResult> MessageDetailsByInbox(int id)
         {
             var client = _httpClientFactory.CreateClient();
-            var responseMessage = await client.GetAsync($"http://localhost:3523/api/Contact/{id}");
+            var responseMessage = await client.GetAsync($"http://localhost:21023/api/Contact/{id}");
             if (responseMessage.IsSuccessStatusCode)
             {
                 var jsonData = await responseMessage.Content.ReadAsStringAsync();

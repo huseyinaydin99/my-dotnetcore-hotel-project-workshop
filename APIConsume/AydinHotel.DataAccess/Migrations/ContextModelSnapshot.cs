@@ -523,11 +523,13 @@ namespace AydinHotel.DataAccess.Migrations
 
             modelBuilder.Entity("AydinHotel.Entity.Concretes.Contact", b =>
                 {
-                    b.HasOne("AydinHotel.Entity.Concretes.MessageCategory", null)
+                    b.HasOne("AydinHotel.Entity.Concretes.MessageCategory", "MessageCategory")
                         .WithMany("Contacts")
                         .HasForeignKey("MessageCategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("MessageCategory");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<int>", b =>

@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AydinHotel.DataAccess.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20240322123852_mig_add_all_entities")]
+    [Migration("20240323141717_mig_add_all_entities")]
     partial class mig_add_all_entities
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -525,11 +525,13 @@ namespace AydinHotel.DataAccess.Migrations
 
             modelBuilder.Entity("AydinHotel.Entity.Concretes.Contact", b =>
                 {
-                    b.HasOne("AydinHotel.Entity.Concretes.MessageCategory", null)
+                    b.HasOne("AydinHotel.Entity.Concretes.MessageCategory", "MessageCategory")
                         .WithMany("Contacts")
                         .HasForeignKey("MessageCategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("MessageCategory");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<int>", b =>
