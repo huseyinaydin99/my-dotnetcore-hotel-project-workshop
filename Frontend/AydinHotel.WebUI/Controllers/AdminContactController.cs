@@ -26,14 +26,24 @@ namespace AydinHotel.WebUI.Controllers
         public async Task<IActionResult> Inbox()
         {
             var client = _httpClientFactory.CreateClient();
-            var responseMessage = await client.GetAsync("http://localhost:21023/api/Contact");
+            var responseMessage = await client.GetAsync("http://localhost:3523/api/Contact");
+
+            var client2 = _httpClientFactory.CreateClient();
+            var responseMessage2 = await client2.GetAsync("http://localhost:3523/api/Contact/GetContactCount");
+
+            var client3 = _httpClientFactory.CreateClient();
+            var responseMessage3 = await client3.GetAsync("http://localhost:3523/api/SendMessage/GetSendMessageCount");
+
             if (responseMessage.IsSuccessStatusCode)
             {
                 var jsonData = await responseMessage.Content.ReadAsStringAsync();
                 var values = JsonConvert.DeserializeObject<List<InboxContactDTO>>(jsonData);
+                var jsonData2 = await responseMessage2.Content.ReadAsStringAsync();
+                ViewBag.contactCount = jsonData2;
+                var jsonData3 = await responseMessage3.Content.ReadAsStringAsync();
+                ViewBag.sendMessageCount = jsonData3;
                 return View(values);
             }
-
             return View();
         }
 
@@ -74,8 +84,15 @@ namespace AydinHotel.WebUI.Controllers
             return View();
         }
 
-        public PartialViewResult SideBarAdminContactPartial()
+        public async Task<PartialViewResult> SideBarAdminContactPartial()
         {
+            var client = _httpClientFactory.CreateClient();
+            var responseMessage = await client.GetAsync("http://localhost:21023/api/GetContactCount");
+            if (responseMessage.IsSuccessStatusCode)
+            {
+                var jsonData = await responseMessage.Content.ReadAsStringAsync();
+                ViewBag.ContactCount = jsonData;
+            }
             return PartialView();
         }
 
@@ -109,5 +126,20 @@ namespace AydinHotel.WebUI.Controllers
             }
             return View();
         }
+        /*
+        [HttpGet]
+        public async Task<IActionResult> GetContactCount()
+        {
+            var client = _httpClientFactory.CreateClient();
+            var responseMessage = await client.GetAsync("http://localhost:21023/api/GetContactCount");
+            if (responseMessage.IsSuccessStatusCode)
+            {
+                var jsonData = await responseMessage.Content.ReadAsStringAsync();
+                var values = JsonConvert.DeserializeObject<List<InboxContactDTO>>(jsonData);
+                return View(values);
+            }
+
+            return View();
+        }*/
     }
 }
