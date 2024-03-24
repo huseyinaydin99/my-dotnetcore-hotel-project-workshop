@@ -39,9 +39,9 @@ namespace AydinHotel.WebUI.Controllers
                 var jsonData = await responseMessage.Content.ReadAsStringAsync();
                 var values = JsonConvert.DeserializeObject<List<InboxContactDTO>>(jsonData);
                 var jsonData2 = await responseMessage2.Content.ReadAsStringAsync();
-                ViewBag.contactCount = jsonData2;
+                ViewBag.ContactCount = jsonData2;
                 var jsonData3 = await responseMessage3.Content.ReadAsStringAsync();
-                ViewBag.sendMessageCount = jsonData3;
+                ViewBag.SendMessageCount = jsonData3;
                 return View(values);
             }
             return View();
