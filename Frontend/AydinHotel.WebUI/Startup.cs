@@ -15,6 +15,8 @@ using Microsoft.Extensions.DependencyInjection;
 using AydinHotel.WebUI.DTOs.GuestDTOs;
 using AydinHotel.WebUI.ValidationRules.GuestValidationRules;
 using FluentValidation.AspNetCore;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc.Authorization;
 
 namespace AydinHotel.WebUI
 {
@@ -38,7 +40,20 @@ namespace AydinHotel.WebUI
             services.AddControllersWithViews().AddFluentValidation();
             services.AddAutoMapper(typeof(Startup));
 
+            services.AddMvc(config =>
+            {
+                var policy = new AuthorizationPolicyBuilder()
+                .RequireAuthenticatedUser()
+                .Build();
+                config.Filters.Add(new AuthorizeFilter(policy));
+            });
 
+            services.ConfigureApplicationCookie(options =>
+            {
+                options.Cookie.HttpOnly = true;
+                options.ExpireTimeSpan = TimeSpan.FromMinutes(10);
+                options.LoginPath = "/Login/Index/";
+            });
 
             services.AddControllersWithViews();
         }
@@ -54,10 +69,12 @@ namespace AydinHotel.WebUI
             {
                 app.UseExceptionHandler("/Home/Error");
             }
+            app.UseStatusCodePagesWithReExecute("/ErrorPage/Error404", "?code={0}");
+            app.UseHttpsRedirection();
             app.UseStaticFiles();
 
             app.UseRouting();
-            
+            app.UseAuthentication();
             app.UseAuthorization();
 
 

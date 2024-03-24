@@ -2,11 +2,13 @@
 using AutoMapper;
 using AydinHotel.Entity.Concretes;
 using AydinHotel.WebUI.DTOs.RegisterDTOs;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AydinHotel.WebUI.Controllers
 {
+    [AllowAnonymous]
     public class RegisterController : Controller
     {
         private UserManager<AppUser> _userManager;

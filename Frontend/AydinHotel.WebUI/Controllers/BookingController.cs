@@ -1,5 +1,6 @@
 ﻿using AydinHotel.WebUI.DTOs.BookingDTOs;
 using AydinHotel.WebUI.DTOs.SubscribeDTOs;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Net.Http;
@@ -8,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace AydinHotel.WebUI.Controllers
 {
+    [AllowAnonymous]
     public class BookingController : Controller
     {
         private readonly IHttpClientFactory _httpClientFactory;
