@@ -9,6 +9,6 @@ namespace AydinHotel.DataAccess.Abstracts
 {
     public interface IContactDal : IGenericDal<Contact>
     {
-
+        public int GetContactCount();
     }
 }

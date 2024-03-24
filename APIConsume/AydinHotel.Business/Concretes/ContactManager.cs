@@ -42,5 +42,10 @@ namespace AydinHotel.Business.Concretes
         {
             return _contactDal.GetById(id);
         }
+
+        public int TGetContactCount()
+        {
+            return _contactDal.GetContactCount();
+        }
     }
 }

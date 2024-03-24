@@ -9,6 +9,6 @@ namespace AydinHotel.DataAccess.Abstracts
 {
     public interface ISendMessageDal : IGenericDal<SendMessage>
     {
-
+        public int GetSendMessageCount();
     }
 }

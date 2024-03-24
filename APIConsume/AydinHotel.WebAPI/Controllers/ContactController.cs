@@ -38,5 +38,11 @@ namespace AydinHotel.WebAPI.Controllers
             var values = _contactService.TGetById(id);
             return Ok(values);
         }
+
+        [HttpGet("GetContactCount")]
+        public IActionResult GetContactCount()
+        {
+            return Ok(_contactService.TGetContactCount());
+        }
     }
 }

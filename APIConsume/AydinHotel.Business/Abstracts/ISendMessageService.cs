@@ -9,6 +9,6 @@ namespace AydinHotel.Business.Abstracts
 {
     public interface ISendMessageService : IGenericService<SendMessage>
     {
-
+        public int TGetSendMessageCount();
     }
 }

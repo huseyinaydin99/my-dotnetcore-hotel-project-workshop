@@ -16,5 +16,11 @@ namespace AydinHotel.DataAccess.EntityFramework
         {
 
         }
+
+        public int GetSendMessageCount()
+        {
+            var context = new Context();
+            return context.SendMessages.Count();
+        }
     }
 }
