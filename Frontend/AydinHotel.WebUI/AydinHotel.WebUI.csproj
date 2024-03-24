@@ -159,6 +159,7 @@
   <ItemGroup>
     <Folder Include="ValidationRules\RoomValidationRules\" />
     <Folder Include="Views\AdminLayout\" />
+    <Folder Include="wwwroot\images\" />
   </ItemGroup>
 
 </Project>
