@@ -35,6 +35,7 @@ namespace AydinHotel.WebUI.Controllers
             }
 
             var appUser = _mapper.Map<AppUser>(createNewUserDto);
+            appUser.WorkLocationId = 1;
             var result = await _userManager.CreateAsync(appUser, createNewUserDto.Password);
             if (result.Succeeded)
             {

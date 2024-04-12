@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AydinHotel.DataAccess.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20240323141717_mig_add_all_entities")]
-    partial class mig_add_all_entities
+    [Migration("20240412065815_mig_add_worklocation")]
+    partial class mig_add_worklocation
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -20,6 +20,24 @@ namespace AydinHotel.DataAccess.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("ProductVersion", "5.0.17")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+            modelBuilder.Entity("AydinHotel.Entity.Concrete.WorkLocation", b =>
+                {
+                    b.Property<int>("WorkLocationId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("WorkLocationCity")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("WorkLocationName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("WorkLocationId");
+
+                    b.ToTable("WorkLocations");
+                });
 
             modelBuilder.Entity("AydinHotel.Entity.Concretes.About", b =>
                 {
@@ -97,12 +115,21 @@ namespace AydinHotel.DataAccess.Migrations
                         .IsConcurrencyToken()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Country")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Email")
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
 
                     b.Property<bool>("EmailConfirmed")
                         .HasColumnType("bit");
+
+                    b.Property<string>("Gender")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ImageUrl")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("LockoutEnabled")
                         .HasColumnType("bit");
@@ -143,6 +170,12 @@ namespace AydinHotel.DataAccess.Migrations
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
 
+                    b.Property<string>("WorkDepartment")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("WorkLocationId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
                     b.HasIndex("NormalizedEmail")
@@ -152,6 +185,8 @@ namespace AydinHotel.DataAccess.Migrations
                         .IsUnique()
                         .HasDatabaseName("UserNameIndex")
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
+
+                    b.HasIndex("WorkLocationId");
 
                     b.ToTable("AspNetUsers");
                 });
@@ -523,6 +558,17 @@ namespace AydinHotel.DataAccess.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
+            modelBuilder.Entity("AydinHotel.Entity.Concretes.AppUser", b =>
+                {
+                    b.HasOne("AydinHotel.Entity.Concrete.WorkLocation", "WorkLocation")
+                        .WithMany("AppUsers")
+                        .HasForeignKey("WorkLocationId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("WorkLocation");
+                });
+
             modelBuilder.Entity("AydinHotel.Entity.Concretes.Contact", b =>
                 {
                     b.HasOne("AydinHotel.Entity.Concretes.MessageCategory", "MessageCategory")
@@ -583,6 +629,11 @@ namespace AydinHotel.DataAccess.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("AydinHotel.Entity.Concrete.WorkLocation", b =>
+                {
+                    b.Navigation("AppUsers");
                 });
 
             modelBuilder.Entity("AydinHotel.Entity.Concretes.MessageCategory", b =>

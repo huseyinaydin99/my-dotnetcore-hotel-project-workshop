@@ -15,6 +15,10 @@ using AydinHotel.Business.Concretes;
 using AydinHotel.DataAccess.Abstracts;
 using AydinHotel.DataAccess.Concretes;
 using AydinHotel.DataAccess.EntityFramework;
+using AydinHotel.BusinessLayer.Abstract;
+using AydinHotel.DataAccessLayer.Abstract;
+using AydinHotel.DataAccessLayer.EntityFramework;
+using HotelProject.BusinessLayer.Concrete;
 
 namespace AydinHotel.WebAPI
 {
@@ -63,6 +67,9 @@ namespace AydinHotel.WebAPI
 
             services.AddScoped<IGuestDal, EfGuestDal>();
             services.AddScoped<IGuestService, GuestManager>();
+
+            services.AddScoped<IWorkLocationDal, EfWorkLocationDal>();
+            services.AddScoped<IWorkLocationService, WorkLocationManager>();
 
             services.AddAutoMapper(typeof(Startup));
 

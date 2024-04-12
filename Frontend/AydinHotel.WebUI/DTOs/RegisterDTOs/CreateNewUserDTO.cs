@@ -22,5 +22,6 @@ namespace AydinHotel.WebUI.DTOs.RegisterDTOs
         [Required(ErrorMessage = "Şifre tekrarı alanı gereklidir.")]
         [Compare("Password", ErrorMessage = "Şifreler eşleşmiyor. Lütfen şifre ve şifre tekrarı alanlarını aynı giriniz.")]
         public string ConfirmPassword { get; set; }
+        public int WorkLocationId { get; set; }
     }
 }

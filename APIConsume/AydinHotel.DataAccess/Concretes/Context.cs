@@ -1,4 +1,5 @@
-﻿using AydinHotel.Entity.Concretes;
+﻿using AydinHotel.Entity.Concrete;
+using AydinHotel.Entity.Concretes;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
@@ -23,5 +24,6 @@ namespace AydinHotel.DataAccess.Concretes
         public DbSet<Contact> Contacts { get; set; }
         public DbSet<MessageCategory> MessageCategories { get; set; }
         public DbSet<SendMessage> SendMessages { get; set; }
+        public DbSet<WorkLocation> WorkLocations { get; set; }
     }
 }
