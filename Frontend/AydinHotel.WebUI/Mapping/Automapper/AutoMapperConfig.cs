@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using AydinHotel.Entity.Concretes;
 using AydinHotel.WebUI.DTOs.AboutDTOs;
+using AydinHotel.WebUI.DTOs.AppUserDTOs;
 using AydinHotel.WebUI.DTOs.BookingDTOs;
 using AydinHotel.WebUI.DTOs.GuestDTOs;
 using AydinHotel.WebUI.DTOs.LoginDTOs;
@@ -32,6 +33,8 @@ namespace AydinHotel.WebUI.Mapping.Automapper
 
             CreateMap<CreateGuestDTO, Guest>().ReverseMap();
             CreateMap<UpdateGuestDTO, Guest>().ReverseMap();
+
+            CreateMap<ResultAppUserDTO, AppUser>().ReverseMap();
         }
     }
 }

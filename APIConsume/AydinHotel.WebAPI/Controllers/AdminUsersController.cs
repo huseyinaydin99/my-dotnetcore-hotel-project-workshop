@@ -1,5 +1,5 @@
-﻿using AydinHotel.Entity.Concretes;
-using AydinHotel.WebUI.DTOs.AppUserDTOs;
+﻿using AydinHotel.Entity.Concrete;
+
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
@@ -22,7 +22,7 @@ namespace AydinHotel.WebUI.Controllers
         public async Task<IActionResult> Index()
         {
             //var client = _httpClientFactory.CreateClient();
-            //var responseMessage = await client.GetAsync("http://localhost:21023/api/AppUser");
+            //var responseMessage = await client.GetAsync("http://localhost:3523/api/AppUser");
             //if (responseMessage.IsSuccessStatusCode)
             //{
             //    var jsonData = await responseMessage.Content.ReadAsStringAsync();
@@ -33,14 +33,14 @@ namespace AydinHotel.WebUI.Controllers
         }
         public async Task<IActionResult> UserList()
         {
-            var client = _httpClientFactory.CreateClient();
-            var responseMessage = await client.GetAsync("http://localhost:21023/api/AppUser");
+            /*var client = _httpClientFactory.CreateClient();
+            var responseMessage = await client.GetAsync("http://localhost:3523/api/AppUser");
             if (responseMessage.IsSuccessStatusCode)
             {
                 var jsonData = await responseMessage.Content.ReadAsStringAsync();
                 var values = JsonConvert.DeserializeObject<List<ResultAppUserListDTO>>(jsonData);
                 return View(values);
-            }
+            }*/
             return View();
         }
     }

@@ -26,13 +26,13 @@ namespace AydinHotel.WebUI.Controllers
         public async Task<IActionResult> Inbox()
         {
             var client = _httpClientFactory.CreateClient();
-            var responseMessage = await client.GetAsync("http://localhost:3523/api/Contact");
+            var responseMessage = await client.GetAsync("http://localhost:21023/api/Contact");
 
             var client2 = _httpClientFactory.CreateClient();
-            var responseMessage2 = await client2.GetAsync("http://localhost:3523/api/Contact/GetContactCount");
+            var responseMessage2 = await client2.GetAsync("http://localhost:21023/api/Contact/GetContactCount");
 
             var client3 = _httpClientFactory.CreateClient();
-            var responseMessage3 = await client3.GetAsync("http://localhost:3523/api/SendMessage/GetSendMessageCount");
+            var responseMessage3 = await client3.GetAsync("http://localhost:21023/api/SendMessage/GetSendMessageCount");
 
             if (responseMessage.IsSuccessStatusCode)
             {

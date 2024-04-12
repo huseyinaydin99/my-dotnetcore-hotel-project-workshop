@@ -30,7 +30,7 @@ namespace AydinHotel.WebUI.Controllers
             MultipartFormDataContent multipartFormDataContent = new MultipartFormDataContent();
             multipartFormDataContent.Add(byteArrayContent, "file", file.FileName);
             var httpclient = new HttpClient();
-            await httpclient.PostAsync("http://localhost:3523/api/FileProcess", multipartFormDataContent);
+            await httpclient.PostAsync("http://localhost:21023/api/FileProcess", multipartFormDataContent);
             return View();
         }
     }
