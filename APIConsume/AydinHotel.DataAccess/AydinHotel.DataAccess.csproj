@@ -20,6 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\AydinHotel.DTOs\AydinHotel.DTOs.csproj" />
     <ProjectReference Include="..\AydinHotel.Entity\AydinHotel.Entity.csproj" />
   </ItemGroup>
 

@@ -19,6 +19,7 @@ using AydinHotel.BusinessLayer.Abstract;
 using AydinHotel.DataAccessLayer.Abstract;
 using AydinHotel.DataAccessLayer.EntityFramework;
 using HotelProject.BusinessLayer.Concrete;
+using HotelProject.DataAccessLayer.EntityFramework;
 
 namespace AydinHotel.WebAPI
 {
@@ -71,6 +72,9 @@ namespace AydinHotel.WebAPI
             services.AddScoped<IWorkLocationDal, EfWorkLocationDal>();
             services.AddScoped<IWorkLocationService, WorkLocationManager>();
 
+            services.AddScoped<IAppUserDal, EfAppUserDal>();
+            services.AddScoped<IAppUserService, AppUserManager>();
+
             services.AddAutoMapper(typeof(Startup));
 
             services.AddCors(opt =>
@@ -80,6 +84,9 @@ namespace AydinHotel.WebAPI
                     opts.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
                 });
             });
+
+            services.AddControllers().AddNewtonsoftJson(options =>
+                options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
