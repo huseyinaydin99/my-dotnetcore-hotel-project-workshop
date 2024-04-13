@@ -45,6 +45,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="Views\Shared\Components\_DashboardHeadPartial\Default.cshtml" />
+    <None Include="Views\Shared\Components\_DashboardLast4StaffList\Default.cshtml" />
+    <None Include="Views\Shared\Components\_DashboardLast6Bookings\Default.cshtml" />
+    <None Include="Views\Shared\Components\_DashboardScriptPartial\Default.cshtml" />
+    <None Include="Views\Shared\Components\_DashboardSubscribeCountPartial\Default.cshtml" />
+    <None Include="Views\Shared\Components\_DashboardWidgetPartial\Default.cshtml" />
     <None Include="wwwroot\hotel-html-template\js\main.js" />
     <None Include="wwwroot\hotel-html-template\lib\counterup\counterup.min.js" />
     <None Include="wwwroot\hotel-html-template\lib\easing\easing.js" />
@@ -158,7 +164,6 @@
 
   <ItemGroup>
     <Folder Include="ValidationRules\RoomValidationRules\" />
-    <Folder Include="ViewComponent\Dashboard\" />
     <Folder Include="Views\AdminLayout\" />
     <Folder Include="wwwroot\images\" />
   </ItemGroup>

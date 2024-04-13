@@ -9,6 +9,6 @@ namespace AydinHotel.DataAccess.Abstracts
 {
     public interface IRoomDal : IGenericDal<Room>
     {
-
+        int RoomCount();
     }
 }

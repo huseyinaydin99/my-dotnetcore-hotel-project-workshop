@@ -42,5 +42,10 @@ namespace AydinHotel.Business.Concretes
         {
             return _roomDal.GetById(id);
         }
+
+        public int TRoomCount()
+        {
+            return _roomDal.RoomCount();
+        }
     }
 }

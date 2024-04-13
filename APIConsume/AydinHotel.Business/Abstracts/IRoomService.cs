@@ -9,6 +9,6 @@ namespace AydinHotel.Business.Abstracts
 {
     public interface IRoomService : IGenericService<Room>
     {
-
+        int TRoomCount();
     }
 }

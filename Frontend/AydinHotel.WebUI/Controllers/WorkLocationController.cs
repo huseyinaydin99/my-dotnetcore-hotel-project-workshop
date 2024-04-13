@@ -1,4 +1,4 @@
-﻿using AydinHotel.WebUI.DTOs.WorkLocationDTO;
+﻿using AydinHotel.WebUI.DTOs.WorkLocationDTOs;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System;

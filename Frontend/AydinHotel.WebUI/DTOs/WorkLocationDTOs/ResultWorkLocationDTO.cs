@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace AydinHotel.WebUI.DTOs.WorkLocationDTO
+namespace AydinHotel.WebUI.DTOs.WorkLocationDTOs
 {
     public class ResultWorkLocationDTO
     {

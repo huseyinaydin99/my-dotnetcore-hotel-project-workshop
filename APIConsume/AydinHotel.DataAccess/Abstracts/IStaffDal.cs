@@ -9,6 +9,7 @@ namespace AydinHotel.DataAccess.Abstracts
 {
     public interface IStaffDal : IGenericDal<Staff>
     {
-
+        int GetStaffCount();
+        List<Staff> Last4Staff();
     }
 }
