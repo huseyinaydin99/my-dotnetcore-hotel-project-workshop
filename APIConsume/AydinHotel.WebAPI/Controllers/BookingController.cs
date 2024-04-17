@@ -9,8 +9,7 @@ namespace AydinHotel.WebAPI.Controllers
     [ApiController]
     public class BookingController : ControllerBase
     {
-        private IBookingService _bookingService;
-
+        private readonly IBookingService _bookingService;
         public BookingController(IBookingService bookingService)
         {
             _bookingService = bookingService;
@@ -52,25 +51,32 @@ namespace AydinHotel.WebAPI.Controllers
             return Ok(values);
         }
 
-        [HttpPut("aaaaa")]
-        public IActionResult aaaaa(Booking booking)
-        {
-            _bookingService.BookingStatusChangeApproved(booking);
-            return Ok();
-        }
-
-        [HttpPut("bbbbb")]
-        public IActionResult bbbbb(int id)
-        {
-            _bookingService.BookingStatusChangeApproved2(id);
-            return Ok();
-        }
-
         [HttpGet("Last6Booking")]
         public IActionResult Last6Booking()
         {
             var values = _bookingService.TLast6Bookings();
             return Ok(values);
+        }
+
+        [HttpGet("BookingAproved")]
+        public IActionResult BookingAproved(int id)
+        {
+            _bookingService.TBookingStatusChangeApproved3(id);
+            return Ok();
+        }
+
+        [HttpGet("BookingCancel")]
+        public IActionResult BookingCancel(int id)
+        {
+            _bookingService.TBookingStatusChangeCancel(id);
+            return Ok();
+        }
+
+        [HttpGet("BookingWait")]
+        public IActionResult BookingWait(int id)
+        {
+            _bookingService.TBookingStatusChangeWait(id);
+            return Ok();
         }
     }
 }
