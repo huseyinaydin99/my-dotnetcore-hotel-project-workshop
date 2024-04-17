@@ -9,6 +9,6 @@ namespace AydinHotel.WebUI.Models.Role
     {
         public string RoleName { get; set; }
         public int RoleId { get; set; }
-        public bool RoleExist { get; set; }
+        public bool RoleExists { get; set; }
     }
 }
