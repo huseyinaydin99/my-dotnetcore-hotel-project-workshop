@@ -42,10 +42,13 @@
                             <label class="toggle" for="chk2"></label>
                         </div><span class="star-toggle ti-star"></span>
                     </div>
-                    <div class="col-mail col-mail-2">
-                        <div class="subject">@item.Message.Substring(0, 100)</div>
-                        <div class="date">11:49 am</div>
-                    </div>
+                    @if (@item.Message.Length > 0)
+                    {
+                        <div class="col-mail col-mail-2">
+                            <div class="subject">@item.Message.Substring(0, 10)</div>
+                            <div class="date">11:49 am</div>
+                        </div>
+                    }
                 </a>
             </div>
         }

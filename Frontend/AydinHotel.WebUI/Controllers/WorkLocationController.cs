@@ -29,11 +29,13 @@ namespace HotelProject.WebUI.Controllers
             }
             return View();
         }
+
         [HttpGet]
         public IActionResult AddWorkLocation()
         {
             return View();
         }
+
         [HttpPost]
         public async Task<IActionResult> AddWorkLocation(CreateWorkLocationDTO createWorkLocationDto)
         {
@@ -47,6 +49,7 @@ namespace HotelProject.WebUI.Controllers
             }
             return View();
         }
+
         public async Task<IActionResult> DeleteWorkLocation(int id)
         {
             var client = _httpClientFactory.CreateClient();
